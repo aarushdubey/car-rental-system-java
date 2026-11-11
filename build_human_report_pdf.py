@@ -111,6 +111,31 @@ styles.add(ParagraphStyle(
 ))
 
 styles.add(ParagraphStyle(
+    "TableHeader",
+    fontName="Arial-Bold",
+    fontSize=9.5,
+    leading=13,
+    textColor=colors.HexColor("#1A2A3A")
+))
+
+styles.add(ParagraphStyle(
+    "TableCell",
+    fontName="Arial",
+    fontSize=9,
+    leading=13,
+    textColor=colors.HexColor("#212121")
+))
+
+styles.add(ParagraphStyle(
+    "TableCellStatus",
+    fontName="Arial-Bold",
+    fontSize=9,
+    leading=13,
+    alignment=1,
+    textColor=colors.HexColor("#212121")
+))
+
+styles.add(ParagraphStyle(
     "CoverTitle",
     fontName="Arial-Bold",
     fontSize=21,
@@ -188,14 +213,15 @@ story.append(Spacer(1, 35))
 
 # Submitted To
 story.append(Paragraph("Submitted to:", styles["CoverMetaHeader"]))
-story.append(Paragraph("Mr. Dipankar Kundu", styles["CoverMetaText"]))
+story.append(Paragraph("Prof. Gokaramaiah Thota", styles["CoverMetaText"]))
 story.append(Paragraph("Department of Computer Science and Engineering", styles["CoverMetaText"]))
 story.append(Paragraph("SRM University AP", styles["CoverMetaText"]))
 story.append(Spacer(1, 15))
 
 # Submitted By
 story.append(Paragraph("Submitted by:", styles["CoverMetaHeader"]))
-story.append(Paragraph("Aarush Dubey – AP23110010810", styles["CoverMetaHeader"]))
+story.append(Paragraph("Aarush Dubey – AP24110010270", styles["CoverMetaHeader"]))
+story.append(Paragraph("Department of Computer Science and Engineering", styles["CoverMetaText"]))
 story.append(Paragraph("_________________________________", styles["CoverMetaText"]))
 
 story.append(PageBreak())
@@ -755,27 +781,57 @@ story.append(Paragraph(r1, styles["HumanBody"]))
 story.append(Paragraph("System Verification Summary Table:", styles["SubSectionHeading"]))
 
 res_table_data = [
-    [Paragraph("<b>Test Case / Feature</b>", styles["SubSectionHeading"]),
-     Paragraph("<b>Input / Action</b>", styles["SubSectionHeading"]),
-     Paragraph("<b>Expected vs Actual Result</b>", styles["SubSectionHeading"]),
-     Paragraph("<b>Status</b>", styles["SubSectionHeading"])],
-    ["1. SQLite Driver Loading", "Application launch", "Driver loads cleanly without external dependencies", "PASSED"],
-    ["2. Polymorphic Pricing", "Rent Bike for 3 days @ $30", "Calculation: 3 × $30 × 0.8 = $72.0 exactly", "PASSED"],
-    ["3. Truck Cargo Calculation", "Rent Truck for 2 days @ $80", "Calculation: 2 × ($80×1.5 + 3.5×10) = $310.0", "PASSED"],
-    ["4. Prevent Double-Booking", "Rent already-rented car", "VehicleNotAvailableException caught; warning shown", "PASSED"],
-    ["5. Thread Queue Safety", "Multiple rapid booking clicks", "Tasks processed one by one; UI remains responsive", "PASSED"],
-    ["6. Database Persistence", "Restart application", "All added vehicles & status updates remain saved", "PASSED"],
-    ["7. Terminal Headless Test", "Run in terminal without GUI", "Detects headless mode and executes automated test", "PASSED"]
+    [Paragraph("<b>Test Case / Feature</b>", styles["TableHeader"]),
+     Paragraph("<b>Input / Action</b>", styles["TableHeader"]),
+     Paragraph("<b>Expected vs Actual Result</b>", styles["TableHeader"]),
+     Paragraph("<b>Status</b>", styles["TableHeader"])],
+    
+    [Paragraph("1. SQLite Driver Loading", styles["TableCell"]),
+     Paragraph("Application launch", styles["TableCell"]),
+     Paragraph("Driver loads cleanly without external dependencies", styles["TableCell"]),
+     Paragraph("Passed", styles["TableCellStatus"])],
+
+    [Paragraph("2. Polymorphic Pricing", styles["TableCell"]),
+     Paragraph("Rent Bike for 3 days @ $30", styles["TableCell"]),
+     Paragraph("Calculation: 3 × $30 × 0.8 = $72.0 exactly", styles["TableCell"]),
+     Paragraph("Passed", styles["TableCellStatus"])],
+
+    [Paragraph("3. Truck Cargo Calculation", styles["TableCell"]),
+     Paragraph("Rent Truck for 2 days @ $80", styles["TableCell"]),
+     Paragraph("Calculation: 2 × ($80×1.5 + 3.5×10) = $310.0", styles["TableCell"]),
+     Paragraph("Passed", styles["TableCellStatus"])],
+
+    [Paragraph("4. Prevent Double-Booking", styles["TableCell"]),
+     Paragraph("Rent already-rented car", styles["TableCell"]),
+     Paragraph("VehicleNotAvailableException caught; warning shown", styles["TableCell"]),
+     Paragraph("Caught", styles["TableCellStatus"])],
+
+    [Paragraph("5. Thread Queue Safety", styles["TableCell"]),
+     Paragraph("Multiple rapid booking clicks", styles["TableCell"]),
+     Paragraph("Tasks processed one by one; UI remains responsive", styles["TableCell"]),
+     Paragraph("Passed", styles["TableCellStatus"])],
+
+    [Paragraph("6. Database Persistence", styles["TableCell"]),
+     Paragraph("Restart application", styles["TableCell"]),
+     Paragraph("All added vehicles & status updates remain saved", styles["TableCell"]),
+     Paragraph("Passed", styles["TableCellStatus"])],
+
+    [Paragraph("7. Terminal Headless Test", styles["TableCell"]),
+     Paragraph("Run in terminal without GUI", styles["TableCell"]),
+     Paragraph("Detects headless mode and executes automated test", styles["TableCell"]),
+     Paragraph("Verified", styles["TableCellStatus"])]
 ]
 
-t_res = Table(res_table_data, colWidths=[120, 140, 160, 60])
+t_res = Table(res_table_data, colWidths=[110, 115, 195, 67])
 t_res.setStyle(TableStyle([
     ('ALIGN', (3, 0), (3, -1), 'CENTER'),
-    ('BOTTOMPADDING', (0, 0), (-1, -1), 6),
-    ('TOPPADDING', (0, 0), (-1, -1), 6),
-    ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#B0BEC5")),
-    ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#F5F7FA")),
-    ('TEXTCOLOR', (3, 1), (3, -1), colors.HexColor("#2E7D32")),
+    ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+    ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+    ('TOPPADDING', (0, 0), (-1, -1), 5),
+    ('LEFTPADDING', (0, 0), (-1, -1), 6),
+    ('RIGHTPADDING', (0, 0), (-1, -1), 6),
+    ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#CFD8DC")),
+    ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor("#F0F2F5")),
 ]))
 story.append(t_res)
 
