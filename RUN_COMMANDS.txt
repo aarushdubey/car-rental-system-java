@@ -1,0 +1,64 @@
+================================================================================
+  HOW TO RUN THE AUTOMATED CAR RENTAL & FLEET MANAGEMENT SYSTEM (JAVA)
+================================================================================
+
+PREREQUISITE:
+- Java Development Kit (JDK 8 or higher, JDK 17+ recommended).
+  Check if Java is installed:
+  java -version
+  javac -version
+
+--------------------------------------------------------------------------------
+OPTION 1: USING AUTOMATED SCRIPTS (FASTEST)
+--------------------------------------------------------------------------------
+
+A. On macOS / Linux:
+   Open Terminal in this folder and run:
+
+   1. Make scripts executable (first time only):
+      chmod +x compile.sh run.sh
+
+   2. Compile the project:
+      ./compile.sh
+
+   3. Run the application:
+      ./run.sh
+
+
+B. On Windows (Command Prompt / PowerShell):
+   Open Command Prompt in this folder and run:
+
+   1. Compile the project:
+      compile.bat
+
+   2. Run the application:
+      run.bat
+
+--------------------------------------------------------------------------------
+OPTION 2: USING MANUAL JAVA COMMANDS (WITHOUT SCRIPTS)
+--------------------------------------------------------------------------------
+
+A. On macOS / Linux:
+
+   1. Compile:
+      javac -cp ".:lib/sqlite-jdbc.jar" Main.java
+
+   2. Run:
+      java -cp ".:lib/sqlite-jdbc.jar" Main
+
+
+B. On Windows (Command Prompt):
+
+   1. Compile:
+      javac -cp ".;lib\sqlite-jdbc.jar" Main.java
+
+   2. Run:
+      java -cp ".;lib\sqlite-jdbc.jar" Main
+
+--------------------------------------------------------------------------------
+NOTES:
+- The SQLite JDBC driver is already bundled in the "lib" folder (zero extra setup).
+- Database file "rentals.db" is created and managed automatically.
+- In terminal-only environments (no display), the program automatically detects
+  headless mode and runs self-diagnostic verification tests.
+================================================================================
