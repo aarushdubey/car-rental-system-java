@@ -3,6 +3,11 @@
 A single Java file of clean, commented code that implements all 5 syllabus units of **CSE 307: Advanced Java Programming**:
 👉 [`Main.java`](Main.java)
 
+📄 **Official Project Report (20 Pages)**: [`JAVA_PROJECT_REPORT.pdf`](JAVA_PROJECT_REPORT.pdf)  
+*Submitted to: Prof. Gokaramaiah Thota*  
+*Submitted by: Aarush Dubey (AP24110010270) & Sommayadeep (AP24110010181)*  
+*Department of Computer Science and Engineering, SRM University AP*
+
 Every line of code includes an inline comment explaining its role in simple language.
 
 ---
