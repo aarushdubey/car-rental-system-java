@@ -209,18 +209,19 @@ if os.path.exists(cover_diag_path):
     img_cover.hAlign = 'CENTER'
     story.append(img_cover)
 
-story.append(Spacer(1, 35))
+story.append(Spacer(1, 20))
 
 # Submitted To
 story.append(Paragraph("Submitted to:", styles["CoverMetaHeader"]))
 story.append(Paragraph("Prof. Gokaramaiah Thota", styles["CoverMetaText"]))
 story.append(Paragraph("Department of Computer Science and Engineering", styles["CoverMetaText"]))
 story.append(Paragraph("SRM University AP", styles["CoverMetaText"]))
-story.append(Spacer(1, 15))
+story.append(Spacer(1, 10))
 
 # Submitted By
 story.append(Paragraph("Submitted by:", styles["CoverMetaHeader"]))
 story.append(Paragraph("Aarush Dubey – AP24110010270", styles["CoverMetaHeader"]))
+story.append(Paragraph("Sommayadeep – AP24110010181", styles["CoverMetaHeader"]))
 story.append(Paragraph("Department of Computer Science and Engineering", styles["CoverMetaText"]))
 story.append(Paragraph("_________________________________", styles["CoverMetaText"]))
 
