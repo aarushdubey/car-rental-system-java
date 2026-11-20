@@ -1,14 +1,66 @@
 # Vehicle Fleet & Car Rental Management System (CSE 307)
 
-A single Java file of clean, commented code that implements all 5 syllabus units of **CSE 307: Advanced Java Programming**:
-👉 [`Main.java`](Main.java)
-
-📄 **Official Project Report (20 Pages)**: [`JAVA_PROJECT_REPORT.pdf`](JAVA_PROJECT_REPORT.pdf)  
+**Advanced Java Programming — Comprehensive Laboratory Project**  
+*Department of Computer Science and Engineering, SRM University-AP*  
 *Submitted to: Prof. Gokaramaiah Thota*  
-*Submitted by: Aarush Dubey (AP24110010270) & Sommayadeep (AP24110010181)*  
-*Department of Computer Science and Engineering, SRM University AP*
+*Submitted by: Aarush Dubey (AP24110010270) & Sommayadeep (AP24110010181)*
 
-Every line of code includes an inline comment explaining its role in simple language.
+---
+
+## 📁 Submission Package Directory Structure
+This folder is organized in accordance with the official laboratory evaluation requirements:
+
+1. **`1_Project_Report/`**
+   - `Car_Rental_Management_System_Project_Report.pdf`: 20-page formal laboratory project report covering all 6 evaluation rubric criteria.
+   - `report.tex`: Complete LaTeX source code.
+2. **`2_Java_Source_Code/`**
+   - `Main.java`: Complete source code covering Units 1 to 5 (410 lines).
+   - `lib/sqlite-jdbc.jar`: Vendored SQLite JDBC driver.
+   - `compile.sh` / `run.sh`: Automated macOS/Linux build and run scripts with auto-compilation.
+   - `compile.bat` / `run.bat`: Windows build and run scripts.
+   - `RUN_COMMANDS.txt`: Execution commands and evaluation guide.
+   - `rentals.db`: Pre-populated SQLite database file.
+   - `rental_agreement.dat`: Binary byte stream persistence file.
+3. **`3_Program_Output_Screenshots/`**
+   - `Program_Output_Screenshots.pdf`: 6-page verification document compiling all terminal and GUI output figures.
+   - `images/`: Individual high-resolution PNG screenshots (01 to 08).
+4. **`4_Java_Certificates/`**
+   - `Java_Certificate_Aarush_Dubey.pdf`: *Advanced Java Concepts* certification (Edureka via Coursera).
+5. **`5_Project_Presentation/`**
+   - Folder reserved for the final presentation slide deck (`.pptx`).
+
+---
+
+## ⚡ Quick Start: Compilation and Execution
+
+### On macOS / Linux:
+```bash
+# Option A: From inside 2_Java_Source_Code
+cd 2_Java_Source_Code
+./compile.sh
+./run.sh
+
+# Option B: From the project root
+./compile.sh
+./run.sh
+
+# Option C: Manual single commands
+javac -cp "lib/sqlite-jdbc.jar" Main.java
+java -cp ".:lib/sqlite-jdbc.jar" Main
+```
+
+The SQLite JDBC driver is included in `lib/sqlite-jdbc.jar`; no separate SQLite
+installation is required. In VS Code, open this project folder and select
+**Run Car Rental Management System** from the Java launch configurations. On macOS,
+you can also double-click `run.command` (you may need to allow it in Privacy & Security
+the first time).
+
+### On Windows (Command Prompt):
+```cmd
+cd 2_Java_Source_Code
+compile.bat
+run.bat
+```
 
 ---
 
@@ -67,3 +119,4 @@ The application includes an interactive desktop GUI supporting full **CRUD** ope
 compile.bat
 run.bat
 ```
+# Car-Rental-System-
