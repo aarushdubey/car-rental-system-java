@@ -40,20 +40,10 @@ cd 2_Java_Source_Code
 ./compile.sh
 ./run.sh
 
-# Option B: From the project root
-./compile.sh
-./run.sh
-
-# Option C: Manual single commands
+# Option B: Manual single commands
 javac -cp "lib/sqlite-jdbc.jar" Main.java
 java -cp ".:lib/sqlite-jdbc.jar" Main
 ```
-
-The SQLite JDBC driver is included in `lib/sqlite-jdbc.jar`; no separate SQLite
-installation is required. In VS Code, open this project folder and select
-**Run Car Rental Management System** from the Java launch configurations. On macOS,
-you can also double-click `run.command` (you may need to allow it in Privacy & Security
-the first time).
 
 ### On Windows (Command Prompt):
 ```cmd
@@ -119,6 +109,3 @@ The application includes an interactive desktop GUI supporting full **CRUD** ope
 compile.bat
 run.bat
 ```
-# Car-Rental-System-
-# Car-Rental-System-
-# Car-Rental-System-
